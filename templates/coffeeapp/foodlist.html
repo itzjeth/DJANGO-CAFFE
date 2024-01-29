@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
     <style>
+      #preloader {
+    background: #fbf3cb url({%static 'images/caffeload.gif'%}) no-repeat center center;
+    background-size: 50%;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+  }
+  
       p {
         font-size: 17px;
       }
@@ -43,25 +52,20 @@ img {
   max-width: 300px;
   border-radius: 50%;
 }
- #preloader {
-    background: #fbf3cb url({%static 'images/caffeload.gif'%}) no-repeat center center;
-    background-size: 50%;
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    z-index: 100;
-  }
+ 
+
   @media only screen and (max-width: 1200px) {
   #preloader {
     transform: scale(2.1);
   }
+
   .grid-container {
   display: grid;
   grid-template-columns: auto;
   gap: 17px;
   background-color: transparent;
   padding: 0px;
-}
+  }
 }
 
     </style>
