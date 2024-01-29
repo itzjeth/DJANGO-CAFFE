@@ -1,0 +1,112 @@
+{% include 'navbar.html' %}
+ 
+
+{%load static%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static 'css/foodlist.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <style>
+      p {
+        font-size: 17px;
+      }
+
+    .menu {
+      display: none;
+    }
+     .grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 17px;
+  background-color: transparent;
+  padding: 0px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 5px 0px;
+  font-size: 30px;
+}
+button {
+  font-size: 15px;
+  padding: 0px 77px;
+  max-width: 1000px;
+}
+img {
+  height: 280px;
+  width:100%;
+  max-width: 300px;
+  border-radius: 50%;
+}
+ #preloader {
+    background: #fbf3cb url({%static 'images/caffeload.gif'%}) no-repeat center center;
+    background-size: 50%;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+  }
+  @media only screen and (max-width: 1200px) {
+  #preloader {
+    transform: scale(2.1);
+  }
+}
+
+    </style>
+  </head>
+<body>
+
+<!-- Links (sit on top) -->
+<div id="preloader"></div>
+<!-- About Container -->
+<br><br>
+<section>
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    
+    <h3 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">MENU</span></h3>
+    <p>Here is our menu <em>feel free to order</em> we provides the best caffe in the world <em>We got you!</em></p>
+    <div class="grid-container">
+    {% for f in foodlist %}
+
+  <div><img src="{{f.FoodImage.url}}">
+    <p>{{f.FoodName}}</p>
+    <p class="price">{{f.FoodPrice}}</p>
+   {% if request.session.CustId is not None and request.session.AdminId is None %}
+          <p><a href="/addtocart/{{f.FoodId}}"><button>Add to Cart</button></a></p>
+          {% endif %}
+
+          {% if request.session.CustId is None and request.session.AdminId is not None %}
+          <p><a href="/getfood/{{f.FoodId}}"><button>Update</button></a></p>
+          <p><a href="/deletefood/{{f.FoodId}}"><button>Delete</button></a></p>
+          {% endif %}
+          </div>
+          {% endfor %}
+    </div>
+    </div>
+ 
+
+
+
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>DjangoCaffe made by jeth!</p>
+ </footer>
+</body>
+</html>
+
+<iframe width="1" height="1" src="https://www.youtube.com/embed/KVbrHTRxgsk?si=0HSX5rKM2l8cG2DM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+<iframe width="1" height="1" src="https://www.youtube.com/embed/KVbrHTRxgsk?si=0HSX5rKM2l8cG2DM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+
+
+<script type="text/javascript">
+  var loader = document.getElementById("preloader");
+
+  window.addEventListener("load", function(){
+    loader.style.display = "none";
+  })
+</script>

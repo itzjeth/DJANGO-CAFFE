@@ -1,0 +1,28 @@
+form {
+    transform: scale(1.3);
+  }
+  body {
+     height: 100vh;
+    background-image:url("{%static 'images/thilogin.png'%}");
+
+  }
+  .login-box {
+    position: flex;
+    align-items: center;
+    box-shadow: 6px 8px 10px black;
+    border: 1px solid white;
+    border-radius: 20px;
+    background: white;
+    padding: 87px 81px;
+
+  } 
+  
+  input {
+    font-size: 2em;
+  }
+  .btn {
+    
+  }
+  .btn:hover {
+
+  }

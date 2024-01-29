@@ -1,0 +1,151 @@
+{%load static%}
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+   
+    #preloader {
+    background: #fbf3cb url({%static 'images/caffeload.gif'%}) no-repeat center center;
+    background-size: 50%;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+  }
+  @media only screen and (max-width: 1200px) {
+  #preloader {
+    transform: scale(2.1);
+  }
+}
+    </style>
+    
+  </head>
+<body>
+
+<!-- Links (sit on top) -->
+<div id="preloader" class="w3-container"></div>
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag">Open from 6am to 5pm</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:90px">Django<br>Cafe</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white">CVSU BACOOR, Cavite</span>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE CAFE</span></h5>
+    <p>Django Cafe was founded by Mr. Jethro Jabay. Our dedication to the perfect cup of coffee is unwavering. We source premium coffee beans from around the world, ensuring each sip is a journey of flavors. From robust espresso shots to creamy lattes and exotic pour-over options, our menu is a curated selection designed to cater to both connoisseurs and those new to the world of specialty coffee.</p>
+    <p>Beyond being a coffee destination, Django Cafe is a hub of activity. Join us for coffee tastings, live music nights, and community events that bring people together. </p>
+    <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>"Use Brewing moments, one cup at a time – where coffee meets community in the heart of our cafe."</i></p>
+      <p>Chef, Coffeeist and Owner: Jethro Jabay</p>
+    </div>
+    <img src="{%static 'images/caffe2.jpg'%}" style="width:100%;max-width:1000px" class="w3-margin-top">
+    <p><strong>Opening hours:</strong> everyday from 6am to 5pm.</p>
+    <p><strong>Address:</strong> CVSU BACOOR, Cavite</p>
+  </div>
+</div>
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE MENU</span></h5>
+  
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');" id="myLink">
+        <div class="w3-col s12 tablink">Drink</div>
+      </a>
+     
+    </div>
+
+    <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Chai Tea Cream</h5>
+      <p class="w3-text-grey">Chai Tea Cream Frappuccino 240.00</p><br>
+    
+      <h5>White Chocolate</h5>
+      <p class="w3-text-grey">White Chocolate Cream Frappuccino 270.00</p><br>
+    
+      <h5>Caramel Cream</h5>
+      <p class="w3-text-grey">Caramel Cream Frappuccino 250.00</p><br>
+    
+      <h5>Strawberry & Cream</h5>
+      <p class="w3-text-grey">Strawberries & Cream Frappuccino 300.00</p><br>
+    
+      <h5>Green Tea Cream</h5>
+      <p class="w3-text-grey">Green Tea Cream Frappuccino 300.00</p><br>
+
+      <h5>Chocolate Chip Cream</h5>
+      <p class="w3-text-grey">Chocolate Chip Cream Frappuccino 340.00</p><br>
+      
+      <h5>Espresso</h5>
+      <p class="w3-text-grey">Espresso Frappuccino 140.00</p><br>
+      
+      <h5>White Mocha</h5>
+      <p class="w3-text-grey">White Mocha Frappuccino 300.00</p><br>
+     
+      <h5>Dark Caramel</h5>
+      <p class="w3-text-grey">Dark Caramel Coffee Frappuccino 350.00</p><br>
+      
+      <h5>Triple Mocha</h5>
+      <p class="w3-text-grey">Triple Mocha Frappuccino 300.00</p><br>
+     
+      <h5>Coffe Jelly</h5>
+      <p class="w3-text-grey">Coffee Jelly Frappuccino 300.00</p><br>
+      
+      <h5>Caramel</h5>
+      <p class="w3-text-grey">Caramel Frappuccino 290.00</p><br>
+    </div>  
+    <img src="{%static 'images/caffe3.jpg'%}" style="width:100%;max-width:1000px;margin-top:32px;">
+  </div>
+</div>
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>DjangoCaffe made by jeth!</p>
+ <!-- Footer end. -->
+ </footer>
+
+<!-- Contact/Area Container -->
+
+<iframe width="1" height="1" src="https://www.youtube.com/embed/KVbrHTRxgsk?si=0HSX5rKM2l8cG2DM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+<iframe width="1" height="1" src="https://www.youtube.com/embed/KVbrHTRxgsk?si=0HSX5rKM2l8cG2DM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+<iframe width="1" height="1" src="https://www.youtube.com/embed/KVbrHTRxgsk?si=0HSX5rKM2l8cG2DM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+
+<script type="text/javascript">
+  var loader = document.getElementById("preloader");
+
+  window.addEventListener("load", function(){
+    loader.style.display = "none";
+  })
+</script>
+<script>
+
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,24 @@
+.newlegend {
+	margin-top:25px;
+	box-shadow:0px 3px 5px;
+	width:50%;
+	background:white;
+	border-radius:25px;
+	font-family: 'Arial', cursive;
+}
+.thih5 {
+	font-size:50%;
+	color:red;
+	padding-bottom:5px;
+	letter-spacing:1px;
+}
+.valid {
+	padding-left: 0px;
+}
+.thbtnx {
+	margin-top:10px;
+	background-image: linear-gradient(190deg, rgba(183,28,28 ,1), rgba(239,154,154 ,1));
+}
+.tbhtnx {
+	margin-top:10px;
+}
