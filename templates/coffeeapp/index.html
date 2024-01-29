@@ -5,7 +5,7 @@
   <head>
     <style type="text/css">
    
-    #preloader {
+   #preloader {
     background: #fbf3cb url({%static 'images/caffeload.gif'%}) no-repeat center center;
     background-size: 50%;
     position: fixed;
@@ -13,11 +13,19 @@
     height: 100vh;
     z-index: 100;
   }
+  
+    .display {
+        font-size: 100px;
+    }
   @media only screen and (max-width: 1200px) {
   #preloader {
     transform: scale(2.1);
   }
+  .display {
+     font-size: 60px;
+ }
 }
+
     </style>
     
   </head>

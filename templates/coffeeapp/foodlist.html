@@ -1,5 +1,5 @@
 {% include 'navbar.html' %}
- 
+
 
 {%load static%}
 <!DOCTYPE html>
@@ -55,6 +55,13 @@ img {
   #preloader {
     transform: scale(2.1);
   }
+  .grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 17px;
+  background-color: transparent;
+  padding: 0px;
+}
 }
 
     </style>
@@ -68,7 +75,7 @@ img {
 <section>
 <div class="w3-container" id="about">
   <div class="w3-content" style="max-width:700px">
-    
+
     <h3 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">MENU</span></h3>
     <p>Here is our menu <em>feel free to order</em> we provides the best caffe in the world <em>We got you!</em></p>
     <div class="grid-container">
@@ -89,7 +96,7 @@ img {
           {% endfor %}
     </div>
     </div>
- 
+
 
 
 
