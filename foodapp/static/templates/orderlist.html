@@ -6,13 +6,13 @@
   <head>
   <link rel="stylesheet" href="{%static 'css/orderlist.css'%}">
 </head>
-    <main class="thsmain">
+    <main class="main-order">
       <form action="placeorder" method="post" class="display-2">
       {% csrf_token %}
-{% for o in orderlist %}
-      <div class="thisdiv9" >
-        <span class="thisspan1">
-          <b class="thisisb2">{{o.OrderDate}}</b><br/>
+      {% for o in orderlist %}
+      <div class="div" >
+        <span class="span">
+          <b class="bold">{{o.OrderDate}}</b><br/>
 <br />
 <tr>
 <td><b>Bill:  </b></td><td><b id="totalbill">{{o.TotalBill}}</b></td><br />
@@ -24,7 +24,6 @@
     </main>
     <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
       <p>DjangoCaffe made by jeth!</p>
-     <!-- Footer end. -->
      </footer>
   </body>
 </html>

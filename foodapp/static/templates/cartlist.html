@@ -1,10 +1,159 @@
 {%load static%}
- {% include 'navbar.html' %}
+{% include 'navbar.html' %}
  <head>
 <link rel="stylesheet" href="{%static 'css/cartlist.css'%}">
 <link rel="stylesheet" href="{%static 'css/listcart.css'%}">
 </head>
-<style>
+
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+    <meta name="robots" content="noindex,follow" />
+  </head>
+  <body>
+    <form action="placeorder" method="post">
+    <div class="shopping-cart">
+    
+      <div class="title">
+       Caffee Cart
+      </div>
+      {% csrf_token %}
+      {% for c in cartlist %}
+      <div class="item">
+        <div class="buttons">
+         
+        </div>
+      
+       
+        <div class="image">
+          <img src="/media/{{c.FoodImage}}" width="124" height="114" alt="" />
+        </div>
+
+        <div class="description">
+          <span>{{c.FoodName}}</span>
+          <span></span>
+          <span></span>
+        </div>
+       
+        <div class="quantity">
+          <input type="number" name="FoodQuant" class="qnt" value="{{c.FoodQuant}}" name="FoodQuant" id="foodqnt" min="1" max="20" /><input type="hidden" id="ctid" value="{{c.CartId}}" readonly /><br />
+        </div>
+       
+        <input class="total-price" name="FoodPrice" value="{{c.FoodPrice}}" readonly>
+      
+        <a href="/deletecart/{{c.CartId}}"><button type="button" name="button" class="button">DELETE</button></a>
+       
+      </div>
+      <br>
+      {% endfor %}
+   
+    
+    </div>
+    <center><a id="ordering" href=""><button type="submit" value="ORDER" id="sub-btn" class="button">ORDER</button></a></center>
+  </form>
+ 
+  <br><br>
+  <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+    <p>DjangoCaffe made by jeth!</p>
+   
+   </footer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+      $('.minus-btn').on('click', function(e) {
+    		e.preventDefault();
+    		var $this = $(this);
+    		var $input = $this.closest('div').find('input');
+    		var value = parseInt($input.val());
+
+    		if (value > 1) {
+    			value = value - 1;
+    		} else {
+    			value = 0;
+    		}
+
+        $input.val(value);
+
+    	});
+
+    	$('.plus-btn').on('click', function(e) {
+    		e.preventDefault();
+    		var $this = $(this);
+    		var $input = $this.closest('div').find('input');
+    		var value = parseInt($input.val());
+
+    		if (value < 100) {
+      		value = value + 1;
+    		} else {
+    			value =100;
+    		}
+
+    		$input.val(value);
+    	});
+
+      $('.like-btn').on('click', function() {
+        $(this).toggleClass('is-active');
+      });
+    </script>
+    <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
 
 * {
@@ -44,7 +193,7 @@
 
 }
 
-/* Buttons -  Delete and Like */
+
 .buttons {
   position: relative;
   padding-top: 30px;
@@ -193,95 +342,6 @@ input[name="FoodPrice"] {
 }
 
 </style>
-    <title>Shopping Cart</title>
-
-    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
-    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
-    <meta name="robots" content="noindex,follow" />
-  </head>
-  <body>
-    <form action="placeorder" method="post">
-    <div class="shopping-cart">
-      <!-- Title -->
-      <div class="title">
-       Caffee Cart
-      </div>
-      {% csrf_token %}
-      {% for c in cartlist %}
-      <!-- Product #1 -->
-      <div class="item">
-        <div class="buttons">
-         
-        </div>
-      
-       
-        <div class="image">
-          <img src="/media/{{c.FoodImage}}" width="124" height="114" alt="" />
-        </div>
-
-        <div class="description">
-          <span>{{c.FoodName}}</span>
-          <span></span>
-          <span></span>
-        </div>
-       
-        <div class="quantity">
-          <input type="number" name="FoodQuant" class="qnt" value="{{c.FoodQuant}}" name="FoodQuant" id="foodqnt" min="1" max="20" /><input type="hidden" id="ctid" value="{{c.CartId}}" readonly /><br />
-        </div>
-       
-        <input class="total-price" name="FoodPrice" value="{{c.FoodPrice}}" readonly>
-      
-        <a href="/deletecart/{{c.CartId}}"><button type="button" name="button" class="button">DELETE</button></a>
-       
-      </div>
-      <br>
-      {% endfor %}
-   
-      <!-- Product #2 -->
-    </div>
-    <center><a id="ordering" href=""><button type="submit" value="ORDER" id="sub-btn" class="button">ORDER</button></a></center>
-  </form>
- 
-  <br><br>
-  <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
-    <p>DjangoCaffe made by jeth!</p>
-   <!-- Footer end. -->
-   </footer>
-    <script type="text/javascript">
-      $('.minus-btn').on('click', function(e) {
-    		e.preventDefault();
-    		var $this = $(this);
-    		var $input = $this.closest('div').find('input');
-    		var value = parseInt($input.val());
-
-    		if (value > 1) {
-    			value = value - 1;
-    		} else {
-    			value = 0;
-    		}
-
-        $input.val(value);
-
-    	});
-
-    	$('.plus-btn').on('click', function(e) {
-    		e.preventDefault();
-    		var $this = $(this);
-    		var $input = $this.closest('div').find('input');
-    		var value = parseInt($input.val());
-
-    		if (value < 100) {
-      		value = value + 1;
-    		} else {
-    			value =100;
-    		}
-
-    		$input.val(value);
-    	});
-
-      $('.like-btn').on('click', function() {
-        $(this).toggleClass('is-active');
-      });
-    </script>
+    </style>
   </body>
 </html>

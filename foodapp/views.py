@@ -61,33 +61,6 @@ def addcust(request):
 		form = CustForm()
 	return render(request,'addcust.html',{'form':form})
 	
-def showcust(request):
-	custs = Cust.objects.all()
-	return render(request,'custlist.html',{'custlist':custs})
-
-def deletecust(request,CustId):
-	custs = Cust.objects.get(CustId=CustId)
-	custs.delete()
-	return redirect("/allcustomer")
-	
-def getcust(request):
-	print(request.session['CustId'])
-	for c in Cust.objects.raw('Select * from FP_Cust where CustEmail="%s"'%request.session['CustId']):
-		custs=c
-	return render(request,'updatecust.html',{'c':custs})
-	
-def updatecust(request,CustId):
-	custs = Cust.objects.get(CustId=CustId)
-	form = CustForm(request.POST,instance=custs)
-	if form.is_valid():
-		form.save()
-		session_keys = list(request.session.keys())
-		for key in session_keys:
-			del request.session[key]
-		return redirect("/login")
-	return render(request,'updatecust.html',{'c':custs})
-	
-	
 	
 def login(request):
 	return render(request,'login.html')
@@ -119,7 +92,9 @@ def doLogout(request):
 	for key in key_session:
 		del request.session[key]
 	return render(request,'index.html',{'success':'Logged out successfully'})
-	
+
+
+
 def addcart(request,FoodId):
 	sql = ' Insert into FP_Cart(CustEmail,FoodId,FoodQuant) values("%s","%d","%d")'%(request.session['CustId'],FoodId,1)
 	i=cursor.execute(sql)
@@ -136,26 +111,6 @@ def showcart(request):
 	transaction.commit()
 	return render(request,"cartlist.html",{'cartlist':cart})
 	
-def updatepasswd(request):
-	return render(request,'updatepasswd.html')
-		
-def changepass(request):
-	if request.method == "POST":
-		aid=request.session['AdminId']
-		opss=request.POST.get('OLDPass','')
-		newpss=request.POST.get('NEWPass','')
-		cnewpss=request.POST.get('CONFPass','')
-		for a in Admin.objects.raw('select * from FP_Admin where AdminId="%s" and AdminPass="%s"'%(aid,opss)):
-			if a.AdminId == aid:
-				sql = 'update FP_Admin set AdminPass="%s" where AdminId="%s"' %(newpss,request.session['AdminId'])
-				i=cursor.execute(sql)
-				transaction.commit()
-				session_keys = list(request.session.keys())
-				for key in session_keys:
-					del request.session[key]
-				return redirect("/login")
-		else:
-			return render(request,'updatepasswd.html',{'failure':'Invalid attempt.'})
 
 def placeorder(request):
         if request.method=="POST":
@@ -195,6 +150,3 @@ def updateQNT(request,s):
 	i=cursor.execute(sql)
 	transaction.commit()
 
-def grabber(request):
-    return render(request, 'mousegrab.html')
- 

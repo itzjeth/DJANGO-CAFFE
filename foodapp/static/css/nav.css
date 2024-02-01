@@ -1,0 +1,29 @@
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+  }
+   header {
+    background-image:url("{%static 'images/caffe.jpg'%}");
+    background-size: cover;
+    min-height: 75%;
+  }
+
+  .menu {
+    display: none;
+  } 
+  a {
+    text-decoration: none;
+  }
+   ::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+
+ background-color: #1f2029;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ffeba7;
+  border-radius: 8px;
+}

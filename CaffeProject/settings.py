@@ -3,7 +3,7 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATES_DIR = os.path.join(BASE_DIR,'templates/coffeeapp/')
+TEMPLATES_DIR = os.path.join(BASE_DIR,'foodapp/static/templates')
 
 SECRET_KEY = 'c@mzjzz2yu&idjufq$4k(gl_p5%e4x0f(k7(4))qqt*1k5w2p7'
 

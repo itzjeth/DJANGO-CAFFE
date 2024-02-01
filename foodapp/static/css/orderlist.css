@@ -1,4 +1,4 @@
-      .thisdiv9 {
+      .div {
         display: flex; 
         position: static; 
         justify-content: center; 
@@ -9,24 +9,24 @@
        
        
         }
-        .thisspan1 {
+        .span {
          
           float:left;
           margin-left:10px;
         }
-        .thisisb {
+        .bold {
           letter-spacing: 3px;
           
 
         }
-        .thisisb2 {
+        .bold {
           font-size:20px;
 
         }
-        .thsmain {
+        .main-order {
             margin-top:80px;
         }
-        .thsspan {
+        .span {
             font-size:14px;
         }
         
