@@ -15,6 +15,7 @@ def contact(request):
 	return render(request,'contact.html')
 
 def addcaffe(request):
+	
 	if request.method=="POST":
 		form = FoodForm(request.POST,request.FILES)
 		if form.is_valid():
@@ -92,7 +93,6 @@ def doLogout(request):
 	for key in key_session:
 		del request.session[key]
 	return render(request,'index.html',{'success':'Logged out successfully'})
-
 
 
 def addcart(request,FoodId):
