@@ -1,9 +1,27 @@
-MIT License
+# DJANGO CAFFE
 
-Copyright (c) 2024 itzjeth
+The aim is to automate its existing manual system by the help of computerized equipment’s and full-fledged computer software, fulfilling their requirements, so that their valuable data/information can be stored for a longer period with easy accessing and manipulation of the same. Basically the project describes how to manage for good performance and better services for the clients.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Built with ❤︎ Jeth and contributors
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+# Frontend
+![](https://github.com/itzjeth/DJANGO-CAFFE/blob/1c39133da23024f33c21bb0803530acc2a5f5348/preview/1.jpg)
+# Backend
+![](https://github.com/itzjeth/DJANGO-CAFFE/blob/1c39133da23024f33c21bb0803530acc2a5f5348/preview/6.jpg)
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+# 🚀 Features
+1. List Products
+2. Admin Functions
+3. Add products to Cart
+4. Customer Functions
+5. Admin CRUD authentication
+6. Record order history
+
+# Default Accounts
+1. adminjethh@gmail.com, bossxanddskill
+
+
+# Future improvements?
+Probably make it in more complex and integrate Wordpress with it.
+
